@@ -12,5 +12,8 @@ public interface IndicateurRepo extends CrudRepository<Indicateur,Long> {
 	
 	@Query("SELECT  i.Nom  FROM Indicateur i")
     List indicNom();
+	
+	@Query("SELECT  i  FROM Indicateur i WHERE i.Nom=?1")
+    List indic(String nom);
 
 }

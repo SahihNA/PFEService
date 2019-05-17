@@ -4,62 +4,89 @@ package com.PFE.demo.Models;
 import javax.persistence.Entity;
 
 import javax.persistence.Id;
-
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "CentroidCommune")
+@Table(name = "CommuneCentroid")
 public class Commune {
 
 	@Id
     private Long id;
-    private String NomC;
+    private String NomC; 
+    private double latitude;
+    private double longitude;
     
-    private double x;
-    private double y;
-	
-	public Commune() {
-		// TODO Auto-generated constructor stub
+    private long code_reg;
+    private String code_commune;
+   
+    private String  code_province;
+    
+    
+    
+	public String getCode_commune() {
+		return code_commune;
 	}
-
-	public Long getId() {
-		return id;
+	public void setCode_commune(String code_commune) {
+		this.code_commune = code_commune;
 	}
-
-	public void setId(Long id) {
-		this.id = id;
-	}
-
 	public String getNomC() {
 		return NomC;
 	}
-
 	public void setNomC(String nomC) {
 		NomC = nomC;
 	}
-
-	public double getX() {
-		return x;
+	public double getLatitude() {
+		return latitude;
 	}
-
-	public void setX(double x) {
-		this.x = x;
+	public void setLatitude(double latitude) {
+		this.latitude = latitude;
 	}
-
-	public double getY() {
-		return y;
+	public double getLongitude() {
+		return longitude;
 	}
-
-	public void setY(double y) {
-		this.y = y;
+	public void setLongitude(double longitude) {
+		this.longitude = longitude;
 	}
-
-	public Commune(String nomC, double x, double y) {
+	
+	
+	
+	public String getCode_province() {
+		return code_province;
+	}
+	public void setCode_province(String code_province) {
+		this.code_province = code_province;
+	}
+	public Long getId() {
+		return id;
+	}
+	
+	public Commune() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public long getCode_reg() {
+		return code_reg;
+	}
+	public void setCode_reg(long code_reg) {
+		this.code_reg = code_reg;
+	}
+	public Commune(String nomC, double latitude, double longitude, long code_reg, String code_commune,
+			String code_province) {
 		super();
 		NomC = nomC;
-		this.x = x;
-		this.y = y;
+		this.latitude = latitude;
+		this.longitude = longitude;
+		this.code_reg = code_reg;
+		this.code_commune = code_commune;
+		this.code_province = code_province;
 	}
+	
+	
+	
+    
+	
+	
 	
 	
 

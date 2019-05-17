@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name = "Valeur")
+@Table(name = "ValeurCommun")
 public class Valeur {
 	
 	@Id
@@ -22,15 +22,11 @@ public class Valeur {
     @ManyToOne
     private Commune commune;
     private int annee;
- 
-    
-    
+
 
 	public Valeur() {
 		
 	}
-
-
 
 
 	public Long getId() {
@@ -43,8 +39,6 @@ public class Valeur {
 	public void setId(Long id) {
 		this.id = id;
 	}
-
-
 
 
 	public double getValeur() {
@@ -61,8 +55,8 @@ public class Valeur {
 
 
 
-	public String getIndicateur() {
-		return indicateur.getNom();
+	public Indicateur getIndicateur() {
+		return indicateur;
 	}
 
 
